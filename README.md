@@ -14,3 +14,14 @@ block链式语法，优雅。
     bt.touchUpInside( ^() {
         NSLog(@"-----点击");
     });
+
+UILabel * th = [UILabel initWithFrame:CGRectMake(20, 300, 100, 50) maker:^(UILabelMaker *make) {
+        
+        make.setText(@"一骑当千");
+        make.setTextColor(UIColor.blue());
+        make.setTextAlignment(NSTextAlignmentCenter);
+        make.setBorderColor(UIColor.red());
+        make.setBorderWidth(2);
+        make.setCornerRadius(5);
+    }];
+    self.view.addSubview(th);
