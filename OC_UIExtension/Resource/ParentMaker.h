@@ -15,7 +15,7 @@
 - (instancetype)initWith: (id)obj;
 
 - (ParentMaker * (^)(BOOL))isUserInteractionEnabled;
-- (ParentMaker * (^)(CGRect))frame;
+- (ParentMaker * (^)(CGRect))setFrame;
 - (ParentMaker * (^)(CGFloat))setCornerRadius;
 - (ParentMaker * (^)(CGFloat))setBorderWidth;
 - (ParentMaker * (^)(UIColor *))setBorderColor;

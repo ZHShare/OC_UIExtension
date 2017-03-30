@@ -26,7 +26,7 @@
     };
 }
 
-- (ParentMaker *(^)(CGRect))frame {
+- (ParentMaker *(^)(CGRect))setFrame {
     
     return ^ParentMaker * (CGRect rect) {
         

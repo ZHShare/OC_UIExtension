@@ -1,5 +1,5 @@
 # OC_UIExtension
-block链式语法，优雅。
+block链式语法，优雅。写在开头：方法有些无法联想。
 
   UIButton * bt = [UIButton initWithFrame:CGRectMake(20, 100, 100, 50)
                                       maker:^(UIButtonMaker *make) {
