@@ -23,11 +23,11 @@ static void * touchKey = &touchKey;
                      frame: (CGRect)aframe
                      maker:(void (^)(UIButtonMaker *))block {
     
-    UIButtonMaker * instance = [[UIButtonMaker alloc] init];
-    instance.resultButton = [UIButton buttonWithType:type];
-    [instance.resultButton setFrame:aframe];
+    UIButton * button = [UIButton buttonWithType:type];
+    [button setFrame:aframe];
+    UIButtonMaker * instance = [[UIButtonMaker alloc] initWith:button];
     block(instance);
-    return instance.resultButton;
+    return button;
 }
 
 + (UIButton *)initWithFrame:(CGRect)aframe
@@ -63,26 +63,26 @@ static void * touchKey = &touchKey;
     UIColor * _titleColor;
     UIImage * _backgroundImage;
     UIImage * _iconImage;
+    
+    UIButton * _button;
+}
+
+- (instancetype)initWith:(id)obj {
+    
+    if (self = [super initWith:obj]) {
+        _button = obj;
+    }
+    return self;
 }
 
 - (UIButtonMaker *(^)(UIFont *))setFont {
     
     return ^UIButtonMaker * (UIFont * font) {
       
-        [self.resultButton.titleLabel setFont:font];
+        [_button.titleLabel setFont:font];
         return self;
     };
 }
-
-- (UIButtonMaker *(^)(CGRect))frame {
-    
-    return ^UIButtonMaker * (CGRect rect) {
-        
-        [self.resultButton setFrame:rect];
-        return self;
-    };
-}
-
 - (UIButtonMaker *(^)(NSString *))setTitle {
     
     return ^UIButtonMaker * (NSString * title) {
@@ -106,7 +106,7 @@ static void * touchKey = &touchKey;
     return ^UIButtonMaker * (UIControlState state) {
         
         if (_title) {
-            [self.resultButton setTitle:_title forState:state];
+            [_button setTitle:_title forState:state];
             _title = nil;
         }
         else {
@@ -114,17 +114,17 @@ static void * touchKey = &touchKey;
         }
         
         if (_titleColor) {
-            [self.resultButton setTitleColor:_titleColor forState:state];
+            [_button setTitleColor:_titleColor forState:state];
             _titleColor = nil;
         }
         
         if (_backgroundImage) {
-            [self.resultButton setBackgroundImage:_backgroundImage forState:state];
+            [_button setBackgroundImage:_backgroundImage forState:state];
             _backgroundImage = nil;
         }
         
         if (_iconImage) {
-            [self.resultButton setImage:_iconImage forState:state];
+            [_button setImage:_iconImage forState:state];
             _iconImage = nil;
         }
         
@@ -158,41 +158,6 @@ static void * touchKey = &touchKey;
     };
 }
 
-- (UIButtonMaker *(^)(CGFloat))setCornerRadius {
-    
-    return  ^UIButtonMaker * (CGFloat force) {
-      
-        if (!self.resultButton.layer.masksToBounds) {
-            self.resultButton.layer.masksToBounds = true;
-        }
-        self.resultButton.layer.cornerRadius = force;
-        return self;
-    };
-}
-
-- (UIButtonMaker *(^)(CGFloat))setBorderWidth {
-    
-    return  ^UIButtonMaker * (CGFloat force) {
-        
-        if (!self.resultButton.layer.masksToBounds) {
-            self.resultButton.layer.masksToBounds = true;
-        }
-        self.resultButton.layer.borderWidth = force;
-        return self;
-    };
-}
-
-- (UIButtonMaker *(^)(UIColor *))setBorderColor {
-    
-    return ^UIButtonMaker * (UIColor * color) {
-       
-        if (!self.resultButton.layer.masksToBounds) {
-            self.resultButton.layer.masksToBounds = true;
-        }
-        self.resultButton.layer.borderColor = color.CGColor;
-        return self;
-    };
-}
 
 @end
 

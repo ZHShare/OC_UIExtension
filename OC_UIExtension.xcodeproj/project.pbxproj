@@ -18,6 +18,7 @@
 		C67E3B8E1E8CD0A000BFC4B0 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C67E3B8B1E8CD0A000BFC4B0 /* UIView+Extension.m */; };
 		C67E3B8F1E8CD0A000BFC4B0 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C67E3B8D1E8CD0A000BFC4B0 /* UILabel+Extension.m */; };
 		C67E3B931E8CD79100BFC4B0 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C67E3B921E8CD79100BFC4B0 /* UIImage+Extension.m */; };
+		C67E3B961E8CF01A00BFC4B0 /* ParentMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = C67E3B951E8CF01A00BFC4B0 /* ParentMaker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		C67E3B901E8CD52E00BFC4B0 /* OC_UIExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OC_UIExtension.h; sourceTree = "<group>"; };
 		C67E3B911E8CD79100BFC4B0 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		C67E3B921E8CD79100BFC4B0 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		C67E3B941E8CF01A00BFC4B0 /* ParentMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentMaker.h; sourceTree = "<group>"; };
+		C67E3B951E8CF01A00BFC4B0 /* ParentMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentMaker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				C67E3B8B1E8CD0A000BFC4B0 /* UIView+Extension.m */,
 				C67E3B8C1E8CD0A000BFC4B0 /* UILabel+Extension.h */,
 				C67E3B8D1E8CD0A000BFC4B0 /* UILabel+Extension.m */,
+				C67E3B941E8CF01A00BFC4B0 /* ParentMaker.h */,
+				C67E3B951E8CF01A00BFC4B0 /* ParentMaker.m */,
 				C67E3B901E8CD52E00BFC4B0 /* OC_UIExtension.h */,
 			);
 			path = Resource;
@@ -191,6 +196,7 @@
 				C67E3B8F1E8CD0A000BFC4B0 /* UILabel+Extension.m in Sources */,
 				C67E3B861E8CB55F00BFC4B0 /* UIButton+Extension.m in Sources */,
 				C67E3B891E8CD09600BFC4B0 /* UIColor+Extension.m in Sources */,
+				C67E3B961E8CF01A00BFC4B0 /* ParentMaker.m in Sources */,
 				C67E3B711E8CB52E00BFC4B0 /* AppDelegate.m in Sources */,
 				C67E3B6E1E8CB52E00BFC4B0 /* main.m in Sources */,
 				C67E3B931E8CD79100BFC4B0 /* UIImage+Extension.m in Sources */,

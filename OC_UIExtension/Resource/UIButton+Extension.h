@@ -6,24 +6,19 @@
 //  Copyright © 2017年 Eter. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ParentMaker.h"
 typedef void (^TouchBlock) ();
 
-@interface UIButtonMaker : NSObject
-
-@property (nonatomic, strong) UIButton * resultButton;
+@interface UIButtonMaker : ParentMaker
 
 - (UIButtonMaker * (^)(NSString *))setTitle;
 - (UIButtonMaker * (^)(UIControlState))forState;
 - (UIButtonMaker * (^)(UIColor *))setTitleColor;
-- (UIButtonMaker * (^)(CGRect))frame;
 - (UIButtonMaker * (^)(UIImage *))setImage;
 - (UIButtonMaker * (^)(UIImage *))setBackgroundImage;
 - (UIButtonMaker * (^)(UIColor *))setBackgroundColor;
 - (UIButtonMaker * (^)(UIFont *))setFont;
-- (UIButtonMaker * (^)(CGFloat))setCornerRadius;
-- (UIButtonMaker * (^)(CGFloat))setBorderWidth;
-- (UIButtonMaker * (^)(UIColor *))setBorderColor;
+
 
 
 @end
@@ -41,5 +36,4 @@ typedef void (^TouchBlock) ();
 
 - (void (^)(TouchBlock))touchUpInside;
 
-//: (void (^)())block
 @end

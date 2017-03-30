@@ -17,8 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton * bt = [UIButton initWithFrame:CGRectMake(20, 100, 100, 50)
-                                      maker:^(UIButtonMaker *make) {
+    UIButton * bt = [UIButton initWithFrame:CGRectMake(20, 100, 100, 50) maker:^(UIButtonMaker *make) {
         
         make.setTitle(@"七尺男儿").forState(UIControlStateNormal);
         make.setTitleColor(UIColor.red()).forState(UIControlStateNormal);
@@ -31,17 +30,12 @@
         NSLog(@"-----点击");
     });
     
-    UIButton * cs = [UIButton initWithType:UIButtonTypeCustom
-                                     frame:CGRectMake(20, 200, 100, 50)
-                                     maker:^(UIButtonMaker *make) {
+    UIButton * cs = [UIButton initWithType:UIButtonTypeCustom frame:CGRectMake(20, 200, 100, 50) maker:^(UIButtonMaker *make) {
         
-        make.setTitle(@"七尺大乳").forState(UIControlStateNormal);
-        make.setTitleColor(UIColor.green()).forState(UIControlStateNormal);
-        make.setBackgroundColor(UIColor.black()).forState(UIControlStateNormal);
-                                         make.setCornerRadius(5);
-                                         make.setBorderColor(UIColor.black()).setBorderWidth(2);
-                                        
-                                        
+        make.setTitle(@"七尺大乳").forState(UIControlStateNormal)
+        .setTitleColor(UIColor.green()).forState(UIControlStateNormal)
+        .setBackgroundColor(UIColor.hex(@"#dedddd")).forState(UIControlStateNormal)
+        .setCornerRadius(5).setBorderColor(UIColor.black()).setBorderWidth(2);
     }];
     self.view.addSubview(cs);
     
@@ -49,6 +43,17 @@
        
         NSLog(@"touch -----");
     });
+    
+    UILabel * th = [UILabel initWithFrame:CGRectMake(20, 300, 100, 50) maker:^(UILabelMaker *make) {
+        
+        make.setText(@"一骑当千");
+        make.setTextColor(UIColor.blue());
+        make.setTextAlignment(NSTextAlignmentCenter);
+        make.setBorderColor(UIColor.red());
+        make.setBorderWidth(2);
+        make.setCornerRadius(5);
+    }];
+    self.view.addSubview(th);
     
     // Do any additional setup after loading the view, typically from a nib.
 }
