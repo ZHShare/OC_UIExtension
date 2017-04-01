@@ -10,6 +10,24 @@
 
 @implementation UILabel (Extension)
 
++ (UILabel *(^)(CGRect))initWithFrame {
+    
+    return ^UILabel * (CGRect rect) {
+        UILabel * label = [[UILabel alloc] initWithFrame:rect];
+        return label;
+    };
+}
+
+- (UILabel *(^)(UILabelMakerBlock))maker {
+    
+    return ^UILabel * (UILabelMakerBlock block) {
+        
+        UILabelMaker * maker = [[UILabelMaker alloc] initWith:self];
+        block(maker);
+        return self;
+    };
+}
+
 + (UILabel *)init:(void (^)(UILabelMaker *))block {
     
     return [self initWithFrame:CGRectZero maker:block];

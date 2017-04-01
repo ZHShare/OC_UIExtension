@@ -35,6 +35,32 @@ static void * touchKey = &touchKey;
     return [self initWithType:UIButtonTypeSystem frame:aframe maker:block];
 }
 
++ (UIButton *(^)(CGRect))initWithFrame {
+   
+    return ^UIButton * (CGRect rect) {
+        UIButton * button = [[UIButton alloc] initWithFrame:rect];
+        return button;
+    };
+}
+
++ (UIButton *(^)(UIButtonType))initWithType {
+    
+    return ^UIButton * (UIButtonType type) {
+        UIButton * button = [UIButton buttonWithType:type];
+        return button;
+    };
+}
+
+- (UIButton * (^)(UIButtonMakerBlock))maker {
+    
+    return ^UIButton * (UIButtonMakerBlock block) {
+      
+        UIButtonMaker * instance = [[UIButtonMaker alloc] initWith:self];
+        block(instance);
+        return self;
+    };
+}
+
 - (void (^)(TouchBlock))touchUpInside {
     
     return ^(TouchBlock block) {

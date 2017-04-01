@@ -9,6 +9,7 @@
 #import "ParentMaker.h"
 typedef void (^TouchBlock) ();
 
+
 @interface UIButtonMaker : ParentMaker
 
 - (UIButtonMaker * (^)(NSString *))setTitle;
@@ -23,7 +24,13 @@ typedef void (^TouchBlock) ();
 
 @end
 
+typedef void (^UIButtonMakerBlock) (UIButtonMaker *);
 @interface UIButton (Extension)
+
++ (UIButton * (^)(CGRect))initWithFrame;
++ (UIButton * (^)(UIButtonType))initWithType;
+- (UIButton * (^)(UIButtonMakerBlock))maker;
+
 
 + (UIButton *)initWithType: (UIButtonType)type
                      frame: (CGRect)aframe

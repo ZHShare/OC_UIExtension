@@ -27,9 +27,12 @@
 
 
 @end
+typedef void (^UILabelMakerBlock) (UILabelMaker * make);
 
 @interface UILabel (Extension)
 
++ (UILabel * (^)(CGRect))initWithFrame;
+- (UILabel * (^)(UILabelMakerBlock))maker;
 
 + (UILabel *)init:(void (^)(UILabelMaker * make))block;
 
