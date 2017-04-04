@@ -62,6 +62,7 @@
         make.setTitleColor(UIColor.green()).forState(UIControlStateNormal);
         make.setBackgroundColor(UIColor.hex(@"#dedddd")).forState(UIControlStateNormal);
         make.setCornerRadius(5).setBorderColor(UIColor.black()).setBorderWidth(2);
+        make.setFrame(CGRectMake(20, 100, 150, 50));
     });
     self.view.addSubview(newBt1);
     newBt1.touchUpInside( ^() {

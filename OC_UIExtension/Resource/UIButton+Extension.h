@@ -29,6 +29,8 @@ typedef void (^UIButtonMakerBlock) (UIButtonMaker *);
 
 + (UIButton * (^)(CGRect))initWithFrame;
 + (UIButton * (^)(UIButtonType))initWithType;
+
++ (UIButton * (^)(UIButtonMakerBlock))maker;
 - (UIButton * (^)(UIButtonMakerBlock))maker;
 
 
